@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vremenski Podaci</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+  <h2>Filtriranje Vremenskih Podataka</h2>
+
+  <div id="filteri">
+    <select id="filter-season">
+      <option value="">-- Odaberi sezonu --</option>
+      <option value="Spring">Proljeće</option>
+      <option value="Summer">Ljeto</option>
+      <option value="Autumn">Jesen</option>
+      <option value="Winter">Zima</option>
+    </select>
+
+    <input type="text" id="filter-location" placeholder="Lokacija (npr. inland, coastal, mountain)">
+
+    <input type="range" id="filter-temperature" min="-30" max="50" step="1" value="20">
+    <span id="temperature-value">20°C</span>
+
+    <select id="filter-weather">
+      <option value="">-- Odaberi vrstu vremena --</option>
+      <option value="Sunny">Sunčano</option>
+      <option value="Cloudy">Oblačno</option>
+      <option value="Rainy">Kišovito</option>
+      <option value="Snowy">Snježno</option>
+    </select>
+
+    <button id="apply-filters">Filtriraj</button>
+  </div>
+
+  <table id="weather-table">
+    <thead>
+      <tr>
+        <th>Lokacija</th>
+        <th>Sezona</th>
+        <th>Temperatura</th>
+        <th>Vrsta vremena</th>
+        <th>Plan</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <aside id="plan">
+    <h3>Moj plan</h3>
+    <ul id="lista-plana"></ul>
+    <button id="potvrdi-plan">Potvrdi plan</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
